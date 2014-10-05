@@ -386,6 +386,14 @@ a .icon-flip-vertical:before {
 .icon-search:before {
   content: "\f002";
 }
+.icon-send:before,
+.icon-paper-plane:before {
+  content: "\f1d8";
+}
+.icon-send-o:before,
+.icon-paper-plane-o:before {
+  content: "\f1d9";
+}
 .icon-envelope-alt:before {
   content: "\f003";
 }
@@ -2823,14 +2831,6 @@ a .icon-flip-vertical:before {
 .fa-wechat:before,
 .fa-weixin:before {
   content: "\f1d7";
-}
-.fa-send:before,
-.fa-paper-plane:before {
-  content: "\f1d8";
-}
-.fa-send-o:before,
-.fa-paper-plane-o:before {
-  content: "\f1d9";
 }
 .fa-history:before {
   content: "\f1da";

@@ -324,6 +324,7 @@ public enum IconType implements BaseIconType {
     SAVE("save"),
     SCREENSHOT("screenshot"),
     SEARCH("search"),
+    SEND("send"),
     SHARE("share"),
     SHARE_ALT("share-alt"),
     SHARE_SIGN("share-sign"),
