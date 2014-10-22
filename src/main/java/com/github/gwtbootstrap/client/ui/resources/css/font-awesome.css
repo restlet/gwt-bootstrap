@@ -447,6 +447,18 @@ a .icon-flip-vertical:before {
 .icon-trash:before {
   content: "\f014";
 }
+.icon-toggle-down:before {
+  content: "\f150";
+}
+.icon-toggle-right:before {
+  content: "\f152";
+}
+.icon-toggle-left:before {
+  content: "\f191";
+}
+.icon-toggle-up:before {
+  content: "\f151";
+}
 .icon-home:before {
   content: "\f015";
 }
