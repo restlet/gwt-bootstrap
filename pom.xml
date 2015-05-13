@@ -275,6 +275,7 @@
         <webappDirectory>src/main/webapp</webappDirectory>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <github.sites.plugin.version>0.8</github.sites.plugin.version>
+	<internal.repo.path>file:///home/filip/tmp/sprintapi-mvn/repository</internal.repo.path>
     </properties>
     <dependencies>
         <dependency>
@@ -655,7 +656,7 @@
                 </executions>
             </plugin>
 
-            <!-- for generate maven sites -->
+            <!-- for generate maven sites -
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
@@ -666,10 +667,10 @@
                     <outputEncoding>UTF-8</outputEncoding>
                 </configuration>
             </plugin>
-
+		-->
             <!-- deploy maven site files to github. if you need deploy maven 
                 site files, Run `mvn site -Dgithub.global.userName={your username in github} 
-                -Dgithub.global.password={your password in github}` -->
+                -Dgithub.global.password={your password in github}` 
             <plugin>
                 <groupId>com.github.github</groupId>
                 <artifactId>site-maven-plugin</artifactId>
@@ -686,6 +687,14 @@
                     </execution>
                 </executions>
             </plugin>
+		-->
+  <plugin>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>2.8.1</version>
+        <configuration>
+            <altDeploymentRepository>internal.repo::default::${internal.repo.path}</altDeploymentRepository>
+        </configuration>
+    </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -758,6 +767,7 @@ warSrcDirIsOutput=false
                 </plugin>
                 <!--This plugin's configuration is used to store Eclipse 
                     m2e settings only. It has no influence on the Maven build itself. -->
+		<!--
                 <plugin>
                     <groupId>org.eclipse.m2e</groupId>
                     <artifactId>lifecycle-mapping</artifactId>
@@ -807,7 +817,15 @@ warSrcDirIsOutput=false
                         </lifecycleMappingMetadata>
                     </configuration>
                 </plugin>
+		-->
             </plugins>
         </pluginManagement>
     </build>
+<distributionManagement>
+		<repository>
+			<id>internal.repo</id>
+			<name>Internal Repository</name>
+			<url>${internal.repo.path}</url>
+		</repository>
+	</distributionManagement>
 </project>
