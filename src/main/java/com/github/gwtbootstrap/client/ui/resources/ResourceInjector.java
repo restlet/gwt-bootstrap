@@ -25,6 +25,9 @@ import com.google.gwt.dom.client.LinkElement;
 import com.google.gwt.dom.client.StyleInjector;
 import com.google.gwt.resources.client.TextResource;
 
+import static com.github.gwtbootstrap.client.ui.resources.ResourceInjector.Media.ALL;
+import static com.github.gwtbootstrap.client.ui.resources.ResourceInjector.Media.SCREEN;
+
 /**
  * Utility class to inject our resources into modules page. Use it to inject
  * JavaScript and CSS files.
@@ -41,6 +44,13 @@ public class ResourceInjector {
 
     private static HeadElement head;
 
+    public enum Media {
+        ALL,
+        PRINT,
+        SCREEN,
+        SPEECH
+    }
+
     /**
      * Injects the required CSS styles and JavaScript files into the document header.
      * <pre>
@@ -49,9 +59,9 @@ public class ResourceInjector {
      */
     public static void configureWithCssFile() {
 
-        injectResourceCssAsFile("bootstrap.min.css", "screen");
-        injectResourceCssAsFile("gwt-bootstrap.css", "screen");
-        injectResourceCssAsFile("font-awesome.min.css", null);
+        injectResourceCssAsFile("bootstrap.min.css", SCREEN);
+        injectResourceCssAsFile("gwt-bootstrap.css", SCREEN);
+        injectResourceCssAsFile("font-awesome.min.css", ALL);
 
         configure();
 
@@ -88,13 +98,20 @@ public class ResourceInjector {
      * Inject public resource css file as a file.
      * @param filename inject file name
      */
-    public static void injectResourceCssAsFile(String filename, String media) {
+    public static void injectResourceCssAsFile(String filename) {
+        injectResourceCssAsFile(filename, ALL);
+    }
+
+    /**
+     * Inject public resource css file as a file.
+     * @param filename inject file name
+     * @param media a specific media to apply to the link tag
+     */
+    public static void injectResourceCssAsFile(String filename, Media media) {
         LinkElement link = Document.get().createLinkElement();
         link.setType("text/css");
         link.setRel("stylesheet");
-        if (media != null) {
-            link.setMedia(media);
-        }
+        link.setMedia(media.name().toLowerCase());
         link.setHref(GWT.getModuleBaseURL() + "css/" + filename);
         getHead().appendChild(link);
     }

@@ -20,11 +20,11 @@ import com.google.gwt.core.client.EntryPoint;
 
 /**
  * The entry point class that is executed when GWT Bootstrap is loaded.
- * 
+ *
  * @since 2.0.4.0
- * 
+ *
  * @author Carlos Alexandro Becker
- * 
+ *
  */
 public class Bootstrap implements EntryPoint {
 
@@ -32,7 +32,7 @@ public class Bootstrap implements EntryPoint {
 	 * {@inheritDoc}
 	 */
 	public void onModuleLoad() {
-		ResourceInjector.configure();
+		ResourceInjector.configureWithCssFile();
 	}
 
 }
