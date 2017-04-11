@@ -28,15 +28,15 @@ import com.google.gwt.resources.client.TextResource;
 /**
  * Utility class to inject our resources into modules page. Use it to inject
  * JavaScript and CSS files.
- *
+ * 
  * @since 2.0.4.0
- *
+ * 
  * @author Carlos Alexandro Becker
  */
 public class ResourceInjector {
 
     private static final Configurator ADAPTER = GWT.create(Configurator.class);
-
+    
     private static final InternalResourceInjector INJECTOR = GWT.create(InternalResourceInjector.class);
 
     private static HeadElement head;
@@ -48,15 +48,15 @@ public class ResourceInjector {
      * </pre>
      */
     public static void configureWithCssFile() {
-
-        injectResourceCssAsFile("bootstrap.min.css", "screen");
-        injectResourceCssAsFile("gwt-bootstrap.css", "screen");
-        injectResourceCssAsFile("font-awesome.min.css", null);
+        
+        injectResourceCssAsFile("bootstrap.min.css");
+        injectResourceCssAsFile("gwt-bootstrap.css");
+        injectResourceCssAsFile("font-awesome.min.css");
 
         configure();
-
+        
     }
-
+    
     /**
      * Injects the required CSS styles and JavaScript files into the document
      * header.
@@ -65,7 +65,7 @@ public class ResourceInjector {
         INJECTOR.preConfigure();
 
         Resources res = ADAPTER.getResources();
-        if(isNotLoadedJquery())
+        if(isNotLoadedJquery()) 
             injectJs(res.jquery());
 
         injectJs(res.bootstrapJs());
@@ -88,13 +88,10 @@ public class ResourceInjector {
      * Inject public resource css file as a file.
      * @param filename inject file name
      */
-    public static void injectResourceCssAsFile(String filename, String media) {
+    public static void injectResourceCssAsFile(String filename) {
         LinkElement link = Document.get().createLinkElement();
         link.setType("text/css");
         link.setRel("stylesheet");
-        if (media != null) {
-            link.setMedia(media);
-        }
         link.setHref(GWT.getModuleBaseURL() + "css/" + filename);
         getHead().appendChild(link);
     }
