@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <!-- POM file generated with GWT webAppCreator -->
-    <parent>
-        <groupId>org.sonatype.oss</groupId>
-        <artifactId>oss-parent</artifactId>
-        <version>7</version>
-    </parent>
+  <parent>
+    <groupId>org.sonatype.oss</groupId>
+    <artifactId>oss-parent</artifactId>
+    <version>7</version>
+  </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.gwtbootstrap</groupId>
     <artifactId>gwt-bootstrap</artifactId>
-    <version>2.3.3</version>
+    <version>2.3.2.2-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>GWT-Bootstrap</name>
@@ -32,8 +31,8 @@
         <url>git@github.com:gwtbootstrap/gwt-bootstrap.git</url>
         <connection>scm:git:git@github.com:gwtbootstrap/gwt-bootstrap.git</connection>
         <developerConnection>scm:git:git@github.com:gwtbootstrap/gwt-bootstrap.git</developerConnection>
-        <tag>HEAD</tag>
-    </scm>
+      <tag>HEAD</tag>
+  </scm>
     <distributionManagement>
         <repository>
             <id>nexus-releases</id>
@@ -407,7 +406,7 @@
                                 </goals>
                             </execution>
                         </executions>
-                        <!-- Plugin configuration. There are many available
+                        <!-- Plugin configuration. There are many available 
                             options, see gwt-maven-plugin documentation at codehaus.org -->
                         <configuration>
                             <modules>
@@ -465,7 +464,7 @@
                                 </goals>
                             </execution>
                         </executions>
-                        <!-- Plugin configuration. There are many available
+                        <!-- Plugin configuration. There are many available 
                             options, see gwt-maven-plugin documentation at codehaus.org -->
                         <configuration>
                             <modules>
@@ -517,23 +516,23 @@
 
                 </plugins>
             </build>
-            <dependencies>
-                <dependency>
-                    <groupId>javax.validation</groupId>
-                    <artifactId>validation-api</artifactId>
-                    <version>1.0.0.GA</version>
-                    <scope>compile</scope>
-                    <optional>true</optional>
-                </dependency>
-                <dependency>
-                    <groupId>javax.validation</groupId>
-                    <artifactId>validation-api</artifactId>
-                    <version>1.0.0.GA</version>
-                    <classifier>sources</classifier>
-                    <scope>compile</scope>
-                    <optional>true</optional>
-                </dependency>
-            </dependencies>
+      <dependencies>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>1.0.0.GA</version>
+            <scope>compile</scope>
+          <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>1.0.0.GA</version>
+            <classifier>sources</classifier>
+            <scope>compile</scope>
+          <optional>true</optional>
+        </dependency>
+      </dependencies>
         </profile>
     </profiles>
     <build>
@@ -557,7 +556,7 @@
             </resource>
         </resources>
         <plugins>
-            <!-- append license header to GWT-Bootstrap source and resource
+            <!-- append license header to GWT-Bootstrap source and resource 
                 files. -->
             <plugin>
                 <groupId>com.google.code.maven-license-plugin</groupId>
@@ -593,7 +592,7 @@
                         </goals>
                     </execution>
                 </executions>
-                <!-- Plugin configuration. There are many available options,
+                <!-- Plugin configuration. There are many available options, 
                     see gwt-maven-plugin documentation at codehaus.org -->
                 <configuration>
                     <runTarget>Bootstrap.html</runTarget>
@@ -672,8 +671,8 @@
                 </configuration>
             </plugin>
 
-            <!-- deploy maven site files to github. if you need deploy maven
-                site files, Run `mvn site -Dgithub.global.userName={your username in github}
+            <!-- deploy maven site files to github. if you need deploy maven 
+                site files, Run `mvn site -Dgithub.global.userName={your username in github} 
                 -Dgithub.global.password={your password in github}` -->
             <plugin>
                 <groupId>com.github.github</groupId>
@@ -733,7 +732,7 @@
                         <file>
                             <name>.settings/com.google.gwt.eclipse.core.prefs</name>
                             <content>
-                                <![CDATA[
+                <![CDATA[
 eclipse.preferences.version=1
 filesCopiedToWebInfLib=
                ]]>
@@ -742,7 +741,7 @@ filesCopiedToWebInfLib=
                         <file>
                             <name>.settings/com.google.gdt.eclipse.core.prefs</name>
                             <content>
-                                <![CDATA[
+                <![CDATA[
 eclipse.preferences.version=1
 jarsExcludedFromWebInfLib=
 warSrcDir=${webappDirectory}
@@ -761,7 +760,7 @@ warSrcDirIsOutput=false
                     <artifactId>maven-release-plugin</artifactId>
                     <version>2.3.2</version>
                 </plugin>
-                <!--This plugin's configuration is used to store Eclipse
+                <!--This plugin's configuration is used to store Eclipse 
                     m2e settings only. It has no influence on the Maven build itself. -->
                 <plugin>
                     <groupId>org.eclipse.m2e</groupId>
@@ -786,7 +785,7 @@ warSrcDirIsOutput=false
                                         </goals>
                                     </pluginExecutionFilter>
                                     <action>
-                                        <ignore/>
+                                        <ignore />
                                     </action>
                                 </pluginExecution>
                                 <pluginExecution>
@@ -805,7 +804,7 @@ warSrcDirIsOutput=false
                                         </goals>
                                     </pluginExecutionFilter>
                                     <action>
-                                        <ignore/>
+                                        <ignore />
                                     </action>
                                 </pluginExecution>
                             </pluginExecutions>
