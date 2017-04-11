@@ -32,7 +32,7 @@ public class Bootstrap implements EntryPoint {
 	 * {@inheritDoc}
 	 */
 	public void onModuleLoad() {
-		ResourceInjector.configureWithCssFile();
+		ResourceInjector.configure();
 	}
 
 }
